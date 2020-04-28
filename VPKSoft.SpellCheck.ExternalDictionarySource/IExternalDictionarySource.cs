@@ -1,6 +1,8 @@
+﻿#region License
+/*
 MIT License
 
-Copyright (c) 2020 Petteri Kautonen
+Copyright(c) 2020 Petteri Kautonen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +21,30 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+#endregion
+
+using System.Collections.Generic;
+
+namespace VPKSoft.SpellCheck.ExternalDictionarySource
+{
+    /// <summary>
+    /// An interface to provide an external dictionary to the library.
+    /// </summary>
+    public interface IExternalDictionarySource
+    {
+        /// <summary>
+        /// Gets spelling correction suggestions for a specified miss-spelled word.
+        /// </summary>
+        /// <param name="word">The miss-spelled word to get correction suggestions for.</param>
+        /// <returns>A IEnumerable&lt;System.String&gt; of correction suggestions for the word.</returns>
+        IEnumerable<string> Suggest(string word);
+
+        /// <summary>
+        /// Checks whether the specified word is spelled correctly.
+        /// </summary>
+        /// <param name="word">The word to check.</param>
+        /// <returns><c>true</c> if the word is spelled correctly, <c>false</c> otherwise.</returns>
+        bool Check(string word);
+    }
+}

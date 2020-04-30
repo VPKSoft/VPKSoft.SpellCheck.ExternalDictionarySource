@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/VPKSoft/VPKSoft.SpellCheck.ExternalDictionarySource</projectUrl>
     <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
     <description>$description$</description>
-    <releaseNotes>Initial NuGet release.</releaseNotes>
+    <releaseNotes>Added few new methods and inheritance to IDisposable interface.</releaseNotes>
     <copyright>Copyright © VPKSoft 2020</copyright>
     <tags>interface spell check</tags>
     <icon>vpksoft_logo.png</icon>

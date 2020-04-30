@@ -24,14 +24,17 @@ SOFTWARE.
 */
 #endregion
 
+using System;
 using System.Collections.Generic;
 
 namespace VPKSoft.SpellCheck.ExternalDictionarySource
 {
     /// <summary>
     /// An interface to provide an external dictionary to the library.
+    /// Implements the <see cref="System.IDisposable"/>
     /// </summary>
-    public interface IExternalDictionarySource
+    /// <seealso cref="System.IDisposable" />
+    public interface IExternalDictionarySource: IDisposable
     {
         /// <summary>
         /// Gets spelling correction suggestions for a specified miss-spelled word.
@@ -46,5 +49,15 @@ namespace VPKSoft.SpellCheck.ExternalDictionarySource
         /// <param name="word">The word to check.</param>
         /// <returns><c>true</c> if the word is spelled correctly, <c>false</c> otherwise.</returns>
         bool Check(string word);
+
+        /// <summary>
+        /// Initializes the dictionary data of this class.
+        /// </summary>
+        void Initialize();
+
+        /// <summary>
+        /// Gets ot sets the culture name in the format languagecode2-country/regioncode2.
+        /// </summary>
+        string CultureName { get; set; }
     }
 }

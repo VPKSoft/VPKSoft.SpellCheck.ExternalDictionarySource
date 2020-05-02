@@ -116,11 +116,11 @@ namespace VPKSoft.ExternalDictionaryPackage
                 zip.ExtractAll(pathTo);
             }
 
-            var files = Directory.GetFiles(Path.Combine(Path.GetDirectoryName(pathTo) ?? string.Empty, searchPath),
-                "*" + DictionaryXmlFileEndPart,
-                SearchOption.AllDirectories);
+            var directory = Path.Combine(pathTo, searchPath);
+            var info = new DirectoryInfo(directory);
+            var files = info.GetFiles("*" + DictionaryXmlFileEndPart, SearchOption.AllDirectories);
 
-            return files.FirstOrDefault();
+            return files.FirstOrDefault()?.FullName;
         }
 
         // ReSharper disable twice CommentTypo

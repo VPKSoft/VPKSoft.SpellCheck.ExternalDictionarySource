@@ -10,7 +10,7 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/VPKSoft/VPKSoft.SpellCheck.ExternalDictionarySource</projectUrl>
     <description>$description$</description>
-    <releaseNotes>Initial NuGet release.</releaseNotes>
+    <releaseNotes>Fixed InstallPackage method not working with hidden files.</releaseNotes>
     <copyright>Copyright © VPKSoft 2020</copyright>
     <tags>spell check package</tags>
     <icon>vpksoft_logo.png</icon>

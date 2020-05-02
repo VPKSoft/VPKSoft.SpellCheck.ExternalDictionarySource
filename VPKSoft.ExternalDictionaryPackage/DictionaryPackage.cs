@@ -123,6 +123,23 @@ namespace VPKSoft.ExternalDictionaryPackage
             return files.FirstOrDefault()?.FullName;
         }
 
+        /// <summary>
+        /// Removes the installed package from a specified path of the XML definition file.
+        /// </summary>
+        /// <param name="xmlDefinitionFile">The XML definition file.</param>
+        /// <returns><c>true</c> if the package was successfully removed, <c>false</c> otherwise.</returns>
+        public static bool UnInstallPackage(string xmlDefinitionFile)
+        {
+            var deletePath = Path.GetDirectoryName(xmlDefinitionFile);
+            if (Directory.Exists(deletePath))
+            {
+                Directory.Delete(deletePath, true);
+                return true;
+            }
+
+            return false;
+        }
+
         // ReSharper disable twice CommentTypo
         /// <summary>
         /// Generates the XML definition file for a custom dictionary package.
@@ -200,7 +217,10 @@ namespace VPKSoft.ExternalDictionaryPackage
                             string cultureDescriptionNative, string spdxLicenseId, string url)
                         GetXmlDefinitionDataFromDefinitionFile(string xmlDefinitionFile)
         {
-            var document = XDocument.Load(xmlDefinitionFile);
+
+            var file = File.OpenText(xmlDefinitionFile);
+            var document = XDocument.Load(file);
+            file.Dispose();
             var name = document.Root?.Attribute("name")?.Value;
             var lib = document.Root?.Attribute("lib")?.Value;
 

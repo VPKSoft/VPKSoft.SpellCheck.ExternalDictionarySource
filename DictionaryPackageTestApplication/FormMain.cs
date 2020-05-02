@@ -173,5 +173,21 @@ namespace DictionaryPackageTestApplication
             var textBox = (TextBox) sender;
             lbSpdxLicenseLinkValue.Text = DictionaryPackage.GetSpdxLicenseUrl(textBox.Text);
         }
+
+        private void mnuUnInstall_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (odXml.ShowDialog() == DialogResult.OK)
+                {
+                    var xml = odXml.FileName;
+                    DictionaryPackage.UnInstallPackage(xml);
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayException(ex);
+            }
+        }
     }
 }

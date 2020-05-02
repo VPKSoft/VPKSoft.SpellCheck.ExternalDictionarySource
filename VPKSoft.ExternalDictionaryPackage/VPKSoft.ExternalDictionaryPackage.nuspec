@@ -10,10 +10,11 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/VPKSoft/VPKSoft.SpellCheck.ExternalDictionarySource</projectUrl>
     <description>$description$</description>
-    <releaseNotes>Fixed InstallPackage method not working with hidden files.</releaseNotes>
+    <releaseNotes>Added UnInstallPackage method. Fixed XML data loading on hidden files.</releaseNotes>
     <copyright>Copyright © VPKSoft 2020</copyright>
     <tags>spell check package</tags>
     <icon>vpksoft_logo.png</icon>
+    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
   </metadata>
   <files>
     <file src="vpksoft_logo.png" target="" />

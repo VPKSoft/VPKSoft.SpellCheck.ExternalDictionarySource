@@ -61,6 +61,7 @@
             this.odXml = new System.Windows.Forms.OpenFileDialog();
             this.lbSpdxLicenseLink = new System.Windows.Forms.Label();
             this.lbSpdxLicenseLinkValue = new System.Windows.Forms.Label();
+            this.mnuUnInstall = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -304,7 +305,8 @@
             this.mnuGenerateXmlDefinition,
             this.generateADictionaryPackageToolStripMenuItem,
             this.testInstallADictionaryPackageToolStripMenuItem,
-            this.mnuDisplayXmlData});
+            this.mnuDisplayXmlData,
+            this.mnuUnInstall});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(37, 20);
             this.mnuFile.Text = "File";
@@ -312,7 +314,7 @@
             // mnuGenerateXmlDefinition
             // 
             this.mnuGenerateXmlDefinition.Name = "mnuGenerateXmlDefinition";
-            this.mnuGenerateXmlDefinition.Size = new System.Drawing.Size(276, 22);
+            this.mnuGenerateXmlDefinition.Size = new System.Drawing.Size(397, 22);
             this.mnuGenerateXmlDefinition.Text = "Generate XML definition file for library";
             this.mnuGenerateXmlDefinition.Click += new System.EventHandler(this.mnuGenerateXmlDefinition_Click);
             // 
@@ -328,14 +330,14 @@
             // generateADictionaryPackageToolStripMenuItem
             // 
             this.generateADictionaryPackageToolStripMenuItem.Name = "generateADictionaryPackageToolStripMenuItem";
-            this.generateADictionaryPackageToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.generateADictionaryPackageToolStripMenuItem.Size = new System.Drawing.Size(397, 22);
             this.generateADictionaryPackageToolStripMenuItem.Text = "Generate a dictionary package";
             this.generateADictionaryPackageToolStripMenuItem.Click += new System.EventHandler(this.generateADictionaryPackageToolStripMenuItem_Click);
             // 
             // testInstallADictionaryPackageToolStripMenuItem
             // 
             this.testInstallADictionaryPackageToolStripMenuItem.Name = "testInstallADictionaryPackageToolStripMenuItem";
-            this.testInstallADictionaryPackageToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.testInstallADictionaryPackageToolStripMenuItem.Size = new System.Drawing.Size(397, 22);
             this.testInstallADictionaryPackageToolStripMenuItem.Text = "Test install a dictionary package";
             this.testInstallADictionaryPackageToolStripMenuItem.Click += new System.EventHandler(this.testInstallADictionaryPackageToolStripMenuItem_Click);
             // 
@@ -347,7 +349,7 @@
             // mnuDisplayXmlData
             // 
             this.mnuDisplayXmlData.Name = "mnuDisplayXmlData";
-            this.mnuDisplayXmlData.Size = new System.Drawing.Size(276, 22);
+            this.mnuDisplayXmlData.Size = new System.Drawing.Size(397, 22);
             this.mnuDisplayXmlData.Text = "Display data from a XML definition file";
             this.mnuDisplayXmlData.Click += new System.EventHandler(this.mnuDisplayXmlData_Click);
             // 
@@ -377,6 +379,13 @@
             this.lbSpdxLicenseLinkValue.TabIndex = 20;
             this.lbSpdxLicenseLinkValue.Text = "-";
             this.lbSpdxLicenseLinkValue.Click += new System.EventHandler(this.lbSpdxLicenseLinkValue_Click);
+            // 
+            // mnuUnInstall
+            // 
+            this.mnuUnInstall.Name = "mnuUnInstall";
+            this.mnuUnInstall.Size = new System.Drawing.Size(397, 22);
+            this.mnuUnInstall.Text = "Un-install a dictionary package based on a XML definition file";
+            this.mnuUnInstall.Click += new System.EventHandler(this.mnuUnInstall_Click);
             // 
             // FormMain
             // 
@@ -431,6 +440,7 @@
         private System.Windows.Forms.OpenFileDialog odXml;
         private System.Windows.Forms.Label lbSpdxLicenseLink;
         private System.Windows.Forms.Label lbSpdxLicenseLinkValue;
+        private System.Windows.Forms.ToolStripMenuItem mnuUnInstall;
     }
 }
 
